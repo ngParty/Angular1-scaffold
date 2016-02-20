@@ -1,0 +1,17 @@
+{
+  "name": "angular1-scaffold",
+  "version": "1.0.0",
+  "description": "Angular 1 scaffold with Typescript and ng-metadata",
+  "main": "app/app.js",
+  "scripts": {},
+  "keywords": [],
+  "contributors": [
+    "Martin Hochel <hochelmartin@gmail.com>",
+    "Mario Vejlupek <mario@vejlupek.cz>"
+  ],
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
