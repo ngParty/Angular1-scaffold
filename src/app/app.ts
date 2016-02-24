@@ -1,3 +1,5 @@
+import './app.scss';
+
 import * as angular from 'angular';
 import { provide } from 'ng-metadata/core';
 
