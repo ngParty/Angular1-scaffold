@@ -13,7 +13,8 @@
   "scripts": {
     "typings": "typings install",
     "postinstall": "npm run typings",
-    "start": "webpack-dev-server --port $npm_package_config_port --hot --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/"
+    "start": "webpack-dev-server --port $npm_package_config_port --hot --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
+    "build": "webpack --config webpack-build.config.js"
   },
   "keywords": [],
   "contributors": [
