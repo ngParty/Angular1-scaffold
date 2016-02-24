@@ -3,7 +3,7 @@ const webpack = require( 'webpack' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
-const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
+const ENV = ( process.env.NODE_ENV || 'development' );
 
 const webpackConfigEntryPoints = {
   app: './src/bootstrap.ts'
