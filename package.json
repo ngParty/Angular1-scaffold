@@ -1,0 +1,42 @@
+{
+  "name": "angular1-scaffold",
+  "version": "1.0.0",
+  "description": "Angular 1 scaffold with Typescript and ng-metadata",
+  "main": "app/app.js",
+  "config": {
+    "port": "9000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngParty/Angular1-scaffold.git"
+  },
+  "scripts": {
+    "typings": "typings install",
+    "postinstall": "npm run typings",
+    "start": "webpack-dev-server --port $npm_package_config_port --hot --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
+    "build": "NODE_ENV=production webpack --config webpack-build.config.js"
+  },
+  "keywords": [],
+  "contributors": [
+    "Martin Hochel <hochelmartin@gmail.com>",
+    "Mario Vejlupek <mario@vejlupek.cz>"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.5.0",
+    "ng-metadata": "1.1.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "1.1.1",
+    "css-loader": "0.23.1",
+    "html-webpack-plugin": "2.9.0",
+    "node-sass": "3.4.2",
+    "sass-loader": "3.1.2",
+    "style-loader": "0.13.0",
+    "ts-loader": "0.8.1",
+    "typescript": "1.7.5",
+    "typings": "0.6.8",
+    "webpack": "1.12.13",
+    "webpack-dev-server": "1.14.1"
+  }
+}
