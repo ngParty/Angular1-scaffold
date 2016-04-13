@@ -1,4 +1,5 @@
 import { Component } from 'ng-metadata/core';
+import './app.scss';
 
 @Component({
   selector: `app`,
