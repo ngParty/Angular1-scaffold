@@ -1,18 +1,8 @@
 const webpack = require( 'webpack' );
 
-const webpackConfig = require( './webpack.config.js' );
+const webpackConfig = require( './webpack.config' );
 
-// Override watch set for development
-webpackConfig.watch = false;
-
-// Where do you want to export bundle files
-webpackConfig.output.path = `dist`;
-
-// Path where bundle files will be served on production env
-webpackConfig.output.publicPath = `./`;
-
-webpackConfig.plugins.push(
-
+const webpackConfigPlugins = [
   // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
   // Only emit files when there are no errors
   new webpack.NoErrorsPlugin(),
@@ -27,12 +17,23 @@ webpackConfig.plugins.push(
 
   // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
   // Minify all javascript, switch loaders to minimizing mode
-  new webpack.optimize.UglifyJsPlugin({
+  new webpack.optimize.UglifyJsPlugin( {
     compress: {
       warnings: false
     }
-  })
+  } )
+];
 
-);
+webpackConfig.plugins.push.apply( webpackConfig.plugins, webpackConfigPlugins );
+
+Object.assign( webpackConfig, {
+  watch: false,
+  output: Object.assign( webpackConfig.output, {
+    // Where do you want to export bundle files
+    path: 'dist',
+    // Path where bundle files will be served on production env
+    publicPath: './'
+  } )
+} );
 
 module.exports = webpackConfig;
