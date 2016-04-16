@@ -4,3 +4,4 @@ src/**/*.js
 src/**/*.js.map
 typings
 dist
+coverage

@@ -8,7 +8,7 @@ webpackConfig.watch = false;
 // Where do you want to export bundle files
 webpackConfig.output.path = `dist`;
 
-// Path wehere bundle files will be served on production env
+// Path where bundle files will be served on production env
 webpackConfig.output.publicPath = `./`;
 
 webpackConfig.plugins.push(
