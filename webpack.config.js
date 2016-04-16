@@ -1,9 +1,12 @@
+const path = require( 'path' );
 const webpack = require( 'webpack' );
 
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
 const ENV = ( process.env.NODE_ENV || 'development' );
+
+const root = path.resolve( __dirname, 'src' );
 
 const webpackConfigEntryPoints = {
   /**
@@ -19,7 +22,7 @@ const webpackConfigEntryPoints = {
    *
    * See: http://webpack.github.io/docs/configuration.html#entry
    */
-  app: './src/bootstrap.ts'
+  app: path.resolve( root, 'bootstrap.ts' )
 };
 
 /**
@@ -28,7 +31,7 @@ const webpackConfigEntryPoints = {
  * See: http://webpack.github.io/docs/configuration.html#devtool
  * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
  */
-const webpackDevtool =  'source-map';
+const webpackDevtool = 'source-map';
 // const webpackDevtool =  'cheap-module-eval-source-map';
 
 const webpackPreLoaders = [
@@ -93,7 +96,17 @@ const webpackConfigLoaders = [
   {
     test: /\.html$/,
     loader: 'raw-loader',
-    exclude: [ 'src/index.html' ]
+    exclude: [ path.resolve( root, 'index.html' ) ]
+  },
+
+  /*
+   * Json loader support for *.json files.
+   *
+   * See: https://github.com/webpack/json-loader
+   */
+  {
+    test: /\.json$/,
+    loader: 'json-loader'
   }
 
 ];
@@ -102,7 +115,7 @@ const webpackConfigPlugins = [
 
   new HtmlWebpackPlugin( {
     title: 'Tombaugh Regio',
-    template: 'src/index.html',
+    template: path.resolve( root, 'index.html' ),
     env: ENV,
     host: '0.0.0.0',
     // port is determined from npm config
@@ -199,7 +212,7 @@ module.exports = {
     extensions: [ '', '.ts', '.js' ],
 
     // Make sure root is src
-    root: 'src',
+    root: root,
 
     // remove other default values
     modulesDirectories: [ 'node_modules' ]

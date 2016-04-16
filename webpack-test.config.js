@@ -1,5 +1,5 @@
 const webpack = require( 'webpack' );
-const webpackConfig = require( './webpack.config.js' );
+const webpackConfig = require( './webpack.config' );
 
 
 /**
@@ -20,7 +20,7 @@ const webpackPostLoaders = [
   {
     test: /\.(js|ts)$/,
     loader: 'istanbul-instrumenter-loader',
-    include: 'src' ,
+    include: webpackConfig.resolve.root,
     exclude: [
       /\.(e2e|spec)\.ts$/,
       /node_modules/
@@ -38,10 +38,9 @@ const webpackNode = {
   process: false
 };
 
-delete webpackConfig.entry;
-delete webpackConfig.output;
-
 Object.assign( webpackConfig, {
+  entry: {},
+  output: {},
   devtool: webpackDevtool,
   watch: false,
   node: Object.assign( webpackConfig.node, webpackNode )
