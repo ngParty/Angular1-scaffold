@@ -40,6 +40,7 @@
     "html-webpack-plugin": "2.9.0",
     "istanbul-instrumenter-loader": "0.2.0",
     "jasmine-core": "2.4.1",
+    "json-loader": "0.5.4",
     "karma": "0.13.22",
     "karma-chrome-launcher": "0.2.3",
     "karma-coverage": "0.5.5",
