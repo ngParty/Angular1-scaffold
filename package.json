@@ -18,7 +18,7 @@
     "build": "NODE_ENV=production webpack --config webpack-build.config.js",
     "build:dev": "webpack --progress --profile --colors --display-error-details --display-cached",
     "test": "karma start",
-    "watch:test": "npm run test -- --auto-watch --no-single-run",
+    "test:watch": "npm run test -- --auto-watch --no-single-run",
     "clean": "npm run rimraf -- doc typings coverage dist",
     "server": "webpack-dev-server --port $npm_package_config_port --hot --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/"
   },
