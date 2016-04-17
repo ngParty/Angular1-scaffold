@@ -23,7 +23,9 @@ const webpackPostLoaders = [
     include: webpackConfig.resolve.root,
     exclude: [
       /\.(e2e|spec)\.ts$/,
-      /node_modules/
+      /node_modules/,
+      // @TODO this is temporary, will remove when typescript-helpers will be extracted to separate package
+      /(polyfills|vendor)\.ts$/
     ]
   }
 ];
