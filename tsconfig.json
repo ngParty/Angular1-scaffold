@@ -6,7 +6,10 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "pretty": true,
+    "stripInternal": true,
+    "noEmitHelpers": true
   },
   "exclude": [
     "node_modules",
