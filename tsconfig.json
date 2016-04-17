@@ -9,7 +9,8 @@
     "moduleResolution": "node",
     "pretty": true,
     "stripInternal": true,
-    "noEmitHelpers": true
+    "noEmitHelpers": true,
+    "outDir": "ts-out"
   },
   "exclude": [
     "node_modules",
