@@ -4,9 +4,33 @@ const webpack = require( 'webpack' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
+/**
+ * Webpack Constants
+ */
 const ENV = ( process.env.NODE_ENV || 'development' );
+const ROOT = path.resolve( __dirname, 'src' );
 
-const root = path.resolve( __dirname, 'src' );
+/**
+ * Static metadata for index.html
+ *
+ * See: (custom attribute)
+ */
+const METADATA = {
+  baseUrl: '/',
+  lang: 'en',
+  title: 'Tombaugh Regio',
+  env: ENV,
+  host: '0.0.0.0',
+  // port is determined from npm config
+  // which is set in package.json
+  // "config": {
+  //    "port": "9000"
+  // }
+  port: process.env.npm_package_config_port || 9000,
+  googleAnalytics: {
+    trackingId: 'UA-XXXX-XX'
+  }
+};
 
 const webpackConfigEntryPoints = {
   /**
@@ -22,7 +46,7 @@ const webpackConfigEntryPoints = {
    *
    * See: http://webpack.github.io/docs/configuration.html#entry
    */
-  app: path.resolve( root, 'bootstrap.ts' )
+  app: path.resolve( ROOT, 'bootstrap.ts' )
 };
 
 /**
@@ -96,7 +120,7 @@ const webpackConfigLoaders = [
   {
     test: /\.html$/,
     loader: 'raw-loader',
-    exclude: [ path.resolve( root, 'index.html' ) ]
+    exclude: [ path.resolve( ROOT, 'index.html' ) ]
   },
 
   /*
@@ -113,20 +137,16 @@ const webpackConfigLoaders = [
 
 const webpackConfigPlugins = [
 
+  /**
+   * Plugin: HtmlWebpackPlugin
+   * Description: Simplifies creation of HTML files to serve your webpack bundles.
+   * This is especially useful for webpack bundles that include a hash in the filename
+   * which changes every compilation.
+   *
+   * See: https://github.com/ampedandwired/html-webpack-plugin
+   */
   new HtmlWebpackPlugin( {
-    title: 'Tombaugh Regio',
-    template: path.resolve( root, 'index.html' ),
-    env: ENV,
-    host: '0.0.0.0',
-    // port is determined from npm config
-    // which is set in package.json
-    // "config": {
-    //    "port": "9000"
-    // }
-    port: process.env.npm_package_config_port,
-    googleAnalytics: {
-      trackingId: 'UA-XXXX-XX'
-    }
+    template: path.resolve( ROOT, 'index.html' )
   } ),
 
   /**
@@ -175,6 +195,7 @@ const tslintConfig = {
 };
 
 module.exports = {
+  metadata: METADATA,
   devtool: webpackDevtool,
   entry: webpackConfigEntryPoints,
   output: {
@@ -212,7 +233,7 @@ module.exports = {
     extensions: [ '', '.ts', '.js' ],
 
     // Make sure root is src
-    root: root,
+    root: ROOT,
 
     // remove other default values
     modulesDirectories: [ 'node_modules' ]
