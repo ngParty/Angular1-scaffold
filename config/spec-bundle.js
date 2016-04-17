@@ -14,10 +14,12 @@
 Error.stackTraceLimit = Infinity;
 
 // polyfills
-require('reflect-metadata');
+require('../src/polyfills');
 
-// angular
-require('angular');
+// vendors
+require('../src/vendor');
+
+// testing specific
 require('angular-mocks/ngMock');
 
 /*
