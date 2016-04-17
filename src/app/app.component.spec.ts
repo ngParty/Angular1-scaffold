@@ -6,7 +6,7 @@ describe( `AppComponent`, () => {
 
   let render: IRender;
 
-  beforeEach( angular.mock.module(AppModule.name) );
+  beforeEach( angular.mock.module( AppModule ) );
 
   beforeEach( angular.mock.inject( ( $injector: ng.auto.IInjectorService ) => {
 
