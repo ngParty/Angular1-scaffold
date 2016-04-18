@@ -29,10 +29,8 @@ webpackConfig.plugins.push.apply( webpackConfig.plugins, webpackConfigPlugins );
 Object.assign( webpackConfig, {
   watch: false,
   output: Object.assign( webpackConfig.output, {
-    // Where do you want to export bundle files
-    path: 'dist',
     // Path where bundle files will be served on production env
-    publicPath: './'
+    publicPath: '/'
   } )
 } );
 

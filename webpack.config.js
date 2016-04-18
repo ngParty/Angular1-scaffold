@@ -204,9 +204,7 @@ module.exports = {
      *
      * See: http://webpack.github.io/docs/configuration.html#output-path
      */
-    path: '/',
-
-    publicPath: '/',
+    path: path.resolve( __dirname, 'dist' ),
 
     /**
      * Specifies the name of each output file on disk.
