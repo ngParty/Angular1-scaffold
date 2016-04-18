@@ -1,4 +1,5 @@
-import 'reflect-metadata';
+import './polyfills';
+import './vendor';
 
 import { bootstrap } from 'ng-metadata/platform';
 import { AppModule } from './app/app';

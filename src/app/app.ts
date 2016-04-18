@@ -3,7 +3,6 @@ import { provide } from 'ng-metadata/core';
 
 import { AppComponent } from './app.component.ts';
 
-const ngModule = angular.module( 'app', [] )
-  .directive( ...provide( AppComponent ) );
-
-export const AppModule = ngModule;
+export const AppModule = angular.module( 'app', [] )
+  .directive( ...provide( AppComponent ) )
+  .name;

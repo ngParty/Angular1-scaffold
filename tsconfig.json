@@ -6,11 +6,16 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "pretty": true,
+    "stripInternal": true,
+    "noEmitHelpers": true,
+    "outDir": "ts-out"
   },
   "exclude": [
     "node_modules",
     "typings/main",
     "typings/main.d.ts"
-  ]
+  ],
+  "compileOnSave": false
 }
