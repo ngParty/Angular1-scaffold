@@ -65,7 +65,11 @@ const webpackPreLoaders = [
    *
    * See: https://github.com/wbuchwalter/tslint-loader
    */
-  // { test: /\.ts$/, loader: 'tslint-loader', exclude: [ helpers.root('node_modules') ] },
+  {
+    test: /\.ts$/,
+    loader: 'tslint-loader',
+    exclude: [ /node_modules/ ]
+  },
 
   /**
    * Source map loader support for *.js files
@@ -242,6 +246,6 @@ module.exports = {
     loaders: webpackConfigLoaders
   },
   plugins: webpackConfigPlugins,
-  // tslint: tslintConfig,
+  tslint: tslintConfig,
   node: webpackNode
 };

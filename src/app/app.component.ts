@@ -7,7 +7,7 @@ import './app.scss';
     <h1>Hello from Pluto!!!</h1>
   `
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   constructor( @Inject( '$log' ) private _$log: ng.ILogService ) {}
 
