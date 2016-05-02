@@ -6,3 +6,4 @@ typings
 dist
 coverage
 ts-out
+npm-debug.log
