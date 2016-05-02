@@ -11,6 +11,18 @@ const webpackConfig = require( './webpack.config' );
 const webpackDevtool = 'inline-source-map';
 
 const webpackPostLoaders = [
+
+  /*
+   * Tslint loader support for *.ts files
+   *
+   * See: https://github.com/wbuchwalter/tslint-loader
+   */
+  {
+    test: /\.ts$/,
+    loader: 'tslint-loader',
+    exclude: [ /node_modules/ ]
+  },
+
   /**
    * Instruments JS files with Istanbul for subsequent code coverage reporting.
    * Instrument only testing sources.
@@ -45,6 +57,7 @@ Object.assign( webpackConfig, {
   output: {},
   devtool: webpackDevtool,
   watch: false,
+  plugins: [],
   node: Object.assign( webpackConfig.node, webpackNode )
 } );
 Object.assign( webpackConfig.module, {
