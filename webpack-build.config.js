@@ -18,10 +18,6 @@ const webpackConfigPlugins = [
   // Only emit files when there are no errors
   new webpack.NoErrorsPlugin(),
 
-  // Reference: http://webpack.github.io/docs/list-of-plugins.html#occurenceorderplugin
-  // Assign the module and chunk ids by occurrence count. Ids that are used often get lower (shorter) ids.
-  new webpack.optimize.OccurenceOrderPlugin( true ),
-
   // Reference: http://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
   // Dedupe modules in the output
   new webpack.optimize.DedupePlugin(),

@@ -46,7 +46,9 @@ const webpackConfigEntryPoints = {
    *
    * See: http://webpack.github.io/docs/configuration.html#entry
    */
-  app: path.resolve( ROOT, 'bootstrap.ts' )
+  polyfills: path.resolve( ROOT, 'polyfills.ts' ),
+  vendor: path.resolve( ROOT, 'vendor.ts' ),
+  main: path.resolve( ROOT, 'main.ts' )
 };
 
 /**
@@ -65,11 +67,12 @@ const webpackPreLoaders = [
    *
    * See: https://github.com/wbuchwalter/tslint-loader
    */
-  {
-    test: /\.ts$/,
-    loader: 'tslint-loader',
-    exclude: [ /node_modules/ ]
-  },
+  // @TODO codelyzer is breaking somehow source maps, allow this when it will be resolved
+  // {
+  //   test: /\.ts$/,
+  //   loader: 'tslint-loader',
+  //   exclude: [ /node_modules/ ]
+  // },
 
   /**
    * Source map loader support for *.js files
@@ -142,16 +145,26 @@ const webpackConfigLoaders = [
 const webpackConfigPlugins = [
 
   /**
-   * Plugin: HtmlWebpackPlugin
-   * Description: Simplifies creation of HTML files to serve your webpack bundles.
-   * This is especially useful for webpack bundles that include a hash in the filename
-   * which changes every compilation.
+   * Plugin: OccurenceOrderPlugin
+   * Description: Varies the distribution of the ids to get the smallest id length
+   * for often used ids.
    *
-   * See: https://github.com/ampedandwired/html-webpack-plugin
+   * See: https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
+   * See: https://github.com/webpack/docs/wiki/optimization#minimize
    */
-  new HtmlWebpackPlugin( {
-    template: path.resolve( ROOT, 'index.html' )
-  } ),
+  new webpack.optimize.OccurenceOrderPlugin( true ),
+
+  /**
+   * Plugin: CommonsChunkPlugin
+   * Description: Shares common code between the pages.
+   * It identifies common modules and put them into a commons chunk.
+   *
+   * See: https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
+   * See: https://github.com/webpack/docs/wiki/optimization#multi-page-app
+   */
+  new webpack.optimize.CommonsChunkPlugin({
+    name: [ 'vendor', 'polyfills' ]
+  }),
 
   /**
    * Plugin: CopyWebpackPlugin
@@ -166,7 +179,20 @@ const webpackConfigPlugins = [
       from: 'src/assets',
       to: './'
     }
-  ] )
+  ] ),
+
+  /**
+   * Plugin: HtmlWebpackPlugin
+   * Description: Simplifies creation of HTML files to serve your webpack bundles.
+   * This is especially useful for webpack bundles that include a hash in the filename
+   * which changes every compilation.
+   *
+   * See: https://github.com/ampedandwired/html-webpack-plugin
+   */
+  new HtmlWebpackPlugin( {
+    template: path.resolve( ROOT, 'index.html' ),
+    chunksSortMode: () => [ 'polyfills', 'vendor', 'main' ]
+  } )
 
 ];
 
@@ -224,7 +250,14 @@ module.exports = {
      *
      * See: http://webpack.github.io/docs/configuration.html#output-sourcemapfilename
      */
-    sourceMapFilename: '[name].map'
+    sourceMapFilename: '[name].map',
+
+    /** The filename of non-entry chunks as relative path
+     * inside the output.path directory.
+     *
+     * See: http://webpack.github.io/docs/configuration.html#output-chunkfilename
+     */
+    chunkFilename: '[id].chunk.js'
   },
   resolve: {
     /**
