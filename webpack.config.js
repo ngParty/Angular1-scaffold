@@ -1,5 +1,4 @@
 const path = require( 'path' );
-const helpers = require('./config/helpers');
 const webpack = require( 'webpack' );
 
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
@@ -192,7 +191,7 @@ const webpackConfigPlugins = [
    */
   new HtmlWebpackPlugin( {
     template: path.resolve( ROOT, 'index.html' ),
-    chunksSortMode: helpers.packageSort(['polyfills', 'vendor', 'main'])
+    chunksSortMode: () => [ 'polyfills', 'vendor', 'main' ]
   } )
 
 ];
