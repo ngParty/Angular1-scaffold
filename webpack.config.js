@@ -46,7 +46,6 @@ const webpackConfigEntryPoints = {
    *
    * See: http://webpack.github.io/docs/configuration.html#entry
    */
-  // app: path.resolve( ROOT, 'bootstrap.ts' )
   polyfills: path.resolve( ROOT, 'polyfills.ts' ),
   vendor: path.resolve( ROOT, 'vendor.ts' ),
   main: path.resolve( ROOT, 'main.ts' )
@@ -68,6 +67,7 @@ const webpackPreLoaders = [
    *
    * See: https://github.com/wbuchwalter/tslint-loader
    */
+  // @TODO codelyzer is breaking somehow source maps, allow this when it will be resolved
   // {
   //   test: /\.ts$/,
   //   loader: 'tslint-loader',
@@ -163,7 +163,7 @@ const webpackConfigPlugins = [
    * See: https://github.com/webpack/docs/wiki/optimization#multi-page-app
    */
   new webpack.optimize.CommonsChunkPlugin({
-    name: [ 'polyfills', 'vendor' ].reverse()
+    name: [ 'vendor', 'polyfills' ]
   }),
 
   /**
