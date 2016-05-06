@@ -1,4 +1,4 @@
-import { AppModule } from './app';
+import { AppModule } from './index';
 import { IRender, renderFactory } from 'ng-metadata/testing';
 import { AppComponent } from './app.component';
 
