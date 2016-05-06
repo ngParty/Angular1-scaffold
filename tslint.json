@@ -102,6 +102,17 @@
     "member-ordering": [
       true,
       "variables-before-functions"
+    ],
+    "one-variable-per-declaration": [
+      true
+    ],
+    "no-namespace": [
+      true,
+      "allow-declarations"
+    ],
+    "no-invalid-this": [
+      true,
+      "no-this-in-function-in-method"
     ]
   }
 }
