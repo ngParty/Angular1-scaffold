@@ -19,7 +19,7 @@
     "test": "karma start",
     "test:watch": "npm run test -- --auto-watch --no-single-run",
     "clean": "rimraf doc/ coverage/ dist/",
-    "server": "webpack-dev-server --port $npm_package_config_port --hot --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/"
+    "server": "webpack-dev-server --port $npm_package_config_port --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/"
   },
   "keywords": [],
   "contributors": [
