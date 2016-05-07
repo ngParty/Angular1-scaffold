@@ -68,11 +68,11 @@ const webpackPreLoaders = [
    * See: https://github.com/wbuchwalter/tslint-loader
    */
   // @TODO codelyzer is breaking somehow source maps, allow this when it will be resolved
-  // {
-  //   test: /\.ts$/,
-  //   loader: 'tslint-loader',
-  //   exclude: [ /node_modules/ ]
-  // },
+  {
+    test: /\.ts$/,
+    loader: 'tslint-loader',
+    exclude: [ /node_modules/ ]
+  },
 
   /**
    * Source map loader support for *.js files

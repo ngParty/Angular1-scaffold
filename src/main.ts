@@ -1,4 +1,4 @@
 import { bootstrap } from 'ng-metadata/platform';
-import { AppModule } from './app/app';
+import { AppModule } from './app';
 
 bootstrap( AppModule );
