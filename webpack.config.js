@@ -9,6 +9,7 @@ const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
  */
 const ENV = ( process.env.NODE_ENV || 'development' );
 const ROOT = path.resolve( __dirname, 'src' );
+const DESTINATION = path.resolve( __dirname, 'dist' );
 
 /**
  * Static metadata for index.html
@@ -234,7 +235,7 @@ module.exports = {
      *
      * See: http://webpack.github.io/docs/configuration.html#output-path
      */
-    path: path.resolve( __dirname, 'dist' ),
+    path: DESTINATION,
 
     /**
      * Specifies the name of each output file on disk.
@@ -277,6 +278,11 @@ module.exports = {
   module: {
     preLoaders: webpackPreLoaders,
     loaders: webpackConfigLoaders
+  },
+  devServer: {
+    // This is required for webpack-dev-server. The path should
+    // be an absolute path to your build destination.
+    outputPath: DESTINATION
   },
   plugins: webpackConfigPlugins,
   tslint: tslintConfig,
