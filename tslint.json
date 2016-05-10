@@ -99,6 +99,7 @@
       true,
       120
     ],
+    "no-default-export": true,
     "member-ordering": [
       true,
       "variables-before-functions"
@@ -112,7 +113,7 @@
     ],
     "no-invalid-this": [
       true,
-      "no-this-in-function-in-method"
+      "check-function-in-method"
     ]
   }
 }
