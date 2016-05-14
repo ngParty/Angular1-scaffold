@@ -36,7 +36,7 @@
   "devDependencies": {
     "angular-mocks": "1.5.5",
     "codelyzer": "0.0.19",
-    "copy-webpack-plugin": "2.1.4",
+    "copy-webpack-plugin": "2.1.6",
     "css-loader": "0.23.1",
     "html-webpack-plugin": "2.16.1",
     "istanbul-instrumenter-loader": "0.2.0",
