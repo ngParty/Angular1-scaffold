@@ -1,6 +1,10 @@
 const path = require( 'path' );
 const webpack = require( 'webpack' );
 
+/**
+ * Webpack Plugins
+ */
+const DefinePlugin = require('webpack/lib/DefinePlugin');
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
@@ -20,7 +24,7 @@ const METADATA = {
   baseUrl: '/',
   lang: 'en',
   title: 'Tombaugh Regio',
-  env: ENV,
+  ENV: ENV,
   host: '0.0.0.0',
   // port is determined from npm config
   // which is set in package.json
@@ -144,6 +148,24 @@ const webpackConfigLoaders = [
 ];
 
 const webpackConfigPlugins = [
+
+  /**
+   * Plugin: DefinePlugin
+   * Description: Define free variables.
+   * Useful for having development builds with debug logging or adding global constants.
+   *
+   * Environment helpers
+   *
+   * See: https://webpack.github.io/docs/list-of-plugins.html#defineplugin
+   */
+  // NOTE: when adding more properties, make sure you include them in globals.d.ts
+  new DefinePlugin( {
+    ENV: JSON.stringify( METADATA.ENV ),
+    'process.env': {
+      ENV: JSON.stringify( METADATA.ENV ),
+      NODE_ENV: JSON.stringify( METADATA.ENV )
+    }
+  } ),
 
   /**
    * Plugin: OccurenceOrderPlugin
