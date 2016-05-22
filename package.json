@@ -14,9 +14,9 @@
     "typings": "typings",
     "postinstall": "rimraf typings/ && typings install",
     "start": "npm run server",
-    "build": "NODE_ENV=production webpack --config webpack-build.config.js",
+    "build": "NODE_ENV=production webpack --config webpack-build.config.ts",
     "build:dev": "webpack --progress --profile --colors --display-error-details --display-cached",
-    "test": "karma start",
+    "test": "tsc && karma start ./ts-out/karma.conf.js",
     "test:watch": "npm run test -- --auto-watch --no-single-run",
     "clean": "rimraf doc/ coverage/ dist/",
     "server": "webpack-dev-server --port $npm_package_config_port --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/"

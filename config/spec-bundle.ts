@@ -14,13 +14,13 @@
 Error.stackTraceLimit = Infinity;
 
 // polyfills
-require('../src/polyfills');
+import '../src/polyfills';
 
 // vendors
-require('../src/vendor');
+import '../src/vendor';
 
 // testing specific
-require('angular-mocks/ngMock');
+import 'angular-mocks/ngMock';
 
 /*
  * Ok, this is kinda crazy. We can use the the context method on
@@ -31,10 +31,10 @@ require('angular-mocks/ngMock');
  * any file that ends with spec.js and get its path. By passing in true
  * we say do this recursively
  */
-var testContext = require.context('../src', true, /\.spec\.ts/);
+const testContext = require.context('../src', true, /\.spec\.ts/);
 
 // requires and returns all modules that match
-var modules = requireAll(testContext);
+const modules = requireAll(testContext);
 
 
 /*

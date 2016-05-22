@@ -3,3 +3,5 @@ declare var ENV: string;
 interface GlobalEnvironment {
   ENV
 }
+
+interface Global extends GlobalEnvironment {}

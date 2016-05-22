@@ -1,12 +1,12 @@
-const path = require( 'path' );
-const webpack = require( 'webpack' );
+import * as path from 'path';
+import * as webpack from 'webpack';
 
 /**
  * Webpack Plugins
  */
-const DefinePlugin = require('webpack/lib/DefinePlugin');
-const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
-const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+import * as DefinePlugin from 'webpack/lib/DefinePlugin';
+import * as CopyWebpackPlugin from 'copy-webpack-plugin';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
 /**
  * Webpack Constants
@@ -247,7 +247,8 @@ const tslintConfig = {
   resourcePath: 'src'
 };
 
-module.exports = {
+
+const webpackConfig = {
   metadata: METADATA,
   devtool: webpackDevtool,
   entry: webpackConfigEntryPoints,
@@ -310,3 +311,10 @@ module.exports = {
   tslint: tslintConfig,
   node: webpackNode
 };
+
+export default webpackConfig;
+
+export interface WebpackConfiguration extends webpack.Configuration {
+  metadata: any,
+  tslint: any,
+}

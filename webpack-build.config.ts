@@ -1,6 +1,6 @@
-const webpack = require( 'webpack' );
-
-const webpackConfig = require( './webpack.config' );
+import * as webpack from 'webpack';
+import webpackConfig from './webpack.config';
+import { WebpackConfiguration } from './webpack.config';
 
 /**
  * Static analysis linter for TypeScript advanced options configuration
@@ -31,9 +31,10 @@ const webpackConfigPlugins = [
   } )
 ];
 
-webpackConfig.plugins.push.apply( webpackConfig.plugins, webpackConfigPlugins );
 
-Object.assign( webpackConfig, {
+const webpackBuildConfig = {} as WebpackConfiguration;
+Object.assign( webpackBuildConfig, webpackConfig, {
+  context: __dirname,
   watch: false,
   output: Object.assign( webpackConfig.output, {
     // Path where bundle files will be served on production env
@@ -41,5 +42,6 @@ Object.assign( webpackConfig, {
   } ),
   tslint: Object.assign( webpackConfig.tslint, tslintConfig )
 } );
+webpackBuildConfig.plugins.push.apply( webpackConfig.plugins, webpackConfigPlugins );
 
-module.exports = webpackConfig;
+export default webpackBuildConfig;
