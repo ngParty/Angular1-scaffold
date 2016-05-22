@@ -52,10 +52,10 @@ open http://localhost:9000
 ## Testing
 
 ```bash
-// for running test once
+# for running test once
 npm test
 
-// for running tests in watch mode
+# for running tests in watch mode
 npm run test:watch
 ```
 
