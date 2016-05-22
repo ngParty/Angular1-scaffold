@@ -3,7 +3,7 @@ import { enableProdMode } from 'ng-metadata/core';
 
 import { AppModule } from './app';
 
-if ('production' === ENV) {
+if ( ENV === 'production' ) {
   enableProdMode();
 }
 
