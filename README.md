@@ -4,6 +4,8 @@
 
 # Angular 1 TypeScript Scaffold [![Join Slack](https://img.shields.io/badge/slack-join-brightgreen.svg)](https://ngparty.herokuapp.com)
 
+![ngparty-scaffold-logo](https://cloud.githubusercontent.com/assets/1223799/15454478/db5b45f6-2039-11e6-8a24-315656d53b6d.png)
+
 > The de facto starter repo for building scalable and Angular 2 migration ready apps with Angular, Typescript, ng-metadata and Webpack
 
 This seed repo serves as a minimal starter for anyone looking to get up and running with Angular 1 and Typescript fast.
