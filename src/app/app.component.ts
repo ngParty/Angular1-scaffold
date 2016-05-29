@@ -5,7 +5,18 @@ import { Component, OnInit, Inject } from 'ng-metadata/core';
   styles: [ require( './app.scss' ) ],
   template: `
     <h1>Hello from Pluto!!!</h1>
-  `
+    <nav>
+      <a ng-link="['CrisisCenter']">Crisis Center</a>
+      <a ng-link="['Heroes']">Heroes</a>
+    </nav>
+    <ng-outlet></ng-outlet>
+  `,
+  legacy: {
+    $routeConfig: [
+      { path: '/crisis-center/...', name: 'CrisisCenter', component: 'crisisCenter', useAsDefault: true },
+      { path: '/heroes/...', name: 'Heroes', component: 'heroes' }
+    ]
+  }
 })
 export class AppComponent implements OnInit {
 
