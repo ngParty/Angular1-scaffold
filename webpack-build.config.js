@@ -1,6 +1,6 @@
 const webpack = require( 'webpack' );
 
-const webpackConfig = require( './webpack.config' );
+const webpackConfig = require( './webpack.config' ).webpackConfig;
 
 /**
  * Static analysis linter for TypeScript advanced options configuration
@@ -33,11 +33,17 @@ const webpackConfigPlugins = [
 
 webpackConfig.plugins.push.apply( webpackConfig.plugins, webpackConfigPlugins );
 
+
+
 Object.assign( webpackConfig, {
   watch: false,
   output: Object.assign( webpackConfig.output, {
     // Path where bundle files will be served on production env
-    publicPath: '/'
+    publicPath: '/',
+    // add hash for caching invalidation
+    filename: '[name].[hash].js',
+    sourceMapFilename: '[name].[hash].map',
+    chunkFilename: '[id].[hash].chunk.js'
   } ),
   tslint: Object.assign( webpackConfig.tslint, tslintConfig )
 } );
