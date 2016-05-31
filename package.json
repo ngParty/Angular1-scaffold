@@ -28,6 +28,7 @@
   ],
   "license": "ISC",
   "dependencies": {
+    "@angular/router": "0.2.0",
     "angular": "1.5.6",
     "ng-metadata": "1.12.0",
     "reflect-metadata": "0.1.3",
