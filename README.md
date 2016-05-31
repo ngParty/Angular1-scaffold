@@ -23,6 +23,7 @@ It uses Webpack for the build process, which is highly maintainable, fast and mo
 - [x] type manager with Typings
 - [x] Sass support ( you can add your own preprocessor pretty easily )
 - [x] source maps support
+- [x] [Component Router](https://github.com/ngParty/Angular1-scaffold/tree/component-router) ( for this we have separate branch, because we don't want to force you to use it ;) )
 - [ ] ngUpgrade + Angular 2 integration within build
 
 
