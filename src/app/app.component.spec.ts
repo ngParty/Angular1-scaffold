@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 
 describe( `AppComponent`, () => {
 
-  let render: IRender;
+  let render: IRender<AppComponent>;
 
   beforeEach( angular.mock.module( AppModule ) );
 
