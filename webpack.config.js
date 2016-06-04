@@ -97,13 +97,15 @@ const webpackPreLoaders = [
   }
 ];
 
-const webpackConfigLoaders = [
-
-  // Scripts
+const webpackConfigNullableLoaders = [
+  /**
+   * File Loader for images and fonts
+   *
+   * See: https://github.com/webpack/file-loader
+   */
   {
-    test: /\.ts$/,
-    exclude: [ /node_modules/ ],
-    loader: 'ts-loader'
+    test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+    loader: 'file?name=assets/[name].[hash].[ext]'
   },
 
   // Styles
@@ -121,6 +123,16 @@ const webpackConfigLoaders = [
   {
     test: /\.css$/,
     loaders: [ 'style-loader', 'css-loader' ]
+  }
+];
+
+const webpackConfigLoaders = [
+
+  // Scripts
+  {
+    test: /\.ts$/,
+    exclude: [ /node_modules/ ],
+    loader: 'ts-loader'
   },
 
   /**
@@ -131,21 +143,22 @@ const webpackConfigLoaders = [
    */
   {
     test: /\.html$/,
-    loader: 'raw-loader',
-    exclude: [ path.resolve( ROOT, 'index.html' ) ]
+    exclude: [ path.resolve( ROOT, 'index.html' ) ],
+    loader: 'raw-loader'
   },
 
-  /*
+  /**
    * Json loader support for *.json files.
    *
    * See: https://github.com/webpack/json-loader
    */
   {
     test: /\.json$/,
+    exclude: [ /node_modules/ ],
     loader: 'json-loader'
   }
 
-];
+].concat( webpackConfigNullableLoaders );
 
 const webpackConfigPlugins = [
 
@@ -247,7 +260,7 @@ const tslintConfig = {
   resourcePath: 'src'
 };
 
-module.exports = {
+const webpackConfig = {
   metadata: METADATA,
   devtool: webpackDevtool,
   entry: webpackConfigEntryPoints,
@@ -310,3 +323,6 @@ module.exports = {
   tslint: tslintConfig,
   node: webpackNode
 };
+
+exports.webpackConfigNullableLoaders = webpackConfigNullableLoaders;
+exports.webpackConfig = webpackConfig;

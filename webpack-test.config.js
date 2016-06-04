@@ -1,6 +1,7 @@
 const webpack = require( 'webpack' );
-const webpackConfig = require( './webpack.config' );
 
+const webpackConfig = require( './webpack.config' ).webpackConfig;
+const webpackConfigNullableLoaders = require( './webpack.config' ).webpackConfigNullableLoaders;
 
 /**
  * Source map for Karma from the help of karma-sourcemap-loader &  karma-webpack
@@ -31,6 +32,20 @@ const webpackPostLoaders = [
   }
 ];
 
+const webpackLoaders = webpackConfig.module.loaders
+// copy loaders as they are and exclude nullable ones
+  .slice( 0, webpackConfigNullableLoaders.length )
+  // concat nullable ones
+  .concat(
+    // We don't want css/scss/image/fonts to be loaded to our style, so we 'null' them
+    webpackConfigNullableLoaders.map( ( loaderConfig ) => {
+      return {
+        test: loaderConfig.test,
+        loader: 'null-loader'
+      }
+    } )
+  );
+
 const webpackNode = {
   /**
    * Include polyfills or mocks for various node stuff
@@ -50,7 +65,8 @@ Object.assign( webpackConfig, {
   node: Object.assign( webpackConfig.node, webpackNode )
 } );
 Object.assign( webpackConfig.module, {
-  postLoaders: webpackPostLoaders
+  postLoaders: webpackPostLoaders,
+  loaders: webpackLoaders
 } );
 
 module.exports = webpackConfig;
