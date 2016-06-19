@@ -1,6 +1,7 @@
-const webpack = require( 'webpack' );
-const webpackConfig = require( './webpack.config' );
-
+import * as webpack from 'webpack';
+// const webpackConfig = require( './webpack.config.ts' );
+import webpackConfig from './webpack.config';
+import { WebpackConfiguration } from './webpack.config';
 
 /**
  * Source map for Karma from the help of karma-sourcemap-loader &  karma-webpack
@@ -41,7 +42,9 @@ const webpackNode = {
   process: false
 };
 
-Object.assign( webpackConfig, {
+const webpackTestConfig = {} as WebpackConfiguration;
+
+Object.assign( webpackTestConfig, webpackConfig, {
   entry: {},
   output: {},
   devtool: webpackDevtool,
@@ -49,8 +52,8 @@ Object.assign( webpackConfig, {
   plugins: [],
   node: Object.assign( webpackConfig.node, webpackNode )
 } );
-Object.assign( webpackConfig.module, {
+Object.assign( webpackTestConfig.module, webpackConfig.module, {
   postLoaders: webpackPostLoaders
 } );
 
-module.exports = webpackConfig;
+export default webpackTestConfig;
