@@ -1,12 +1,23 @@
-import { AppModule } from './index';
+import { kebabCase } from 'lodash';
 import { IRender, renderFactory } from 'ng-metadata/testing';
+import { Component, getInjectableName, bundle } from 'ng-metadata/core';
+
 import { AppComponent } from './app.component';
 
 describe( `AppComponent`, () => {
 
-  let render: IRender<AppComponent>;
+  @Component( {
+    selector: 'test-component',
+    directives: [ AppComponent ],
+    template: `<my-app></my-app>`
+  } )
+  class TestComponent {
+  }
 
-  beforeEach( angular.mock.module( AppModule ) );
+  const TestModule: string = bundle( TestComponent ).name;
+  let render: IRender<TestComponent>;
+
+  beforeEach( angular.mock.module( TestModule ) );
 
   beforeEach( angular.mock.inject( ( $injector: ng.auto.IInjectorService ) => {
 
@@ -20,11 +31,28 @@ describe( `AppComponent`, () => {
 
   it( `should render Hello Pluto!!!`, () => {
 
-    const { ctrl, compiledElement } = render( AppComponent );
+    const {compiledElement} = render(TestComponent);
 
-    expect( ctrl instanceof AppComponent ).toBe( true );
-    expect( compiledElement.text() ).toContain( 'Hello from Pluto!!!' );
+    // now we need to get our tested component
+    const { debugElement, componentInstance } = queryByDirective( compiledElement, AppComponent );
+
+    expect( componentInstance instanceof AppComponent ).toBe( true );
+    expect( debugElement.text() ).toContain( 'Hello from Pluto!!!' );
 
   } );
 
+
 } );
+
+/**
+ * helper for getting tested components
+ * - this is just temporary and will be removed when it's part if ngMetadata
+ */
+export function queryByDirective<T extends Function>( host: ng.IAugmentedJQuery, Type: T ) {
+  const ctrlName = getInjectableName( Type );
+  const selector = kebabCase( ctrlName );
+  const debugElement = host.find( selector );
+  const componentInstance = debugElement.controller( ctrlName ) as T;
+
+  return { debugElement, componentInstance };
+}
