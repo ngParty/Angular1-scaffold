@@ -1,10 +1,10 @@
-import { bootstrap } from 'ng-metadata/platform';
+import { bootstrap } from 'ng-metadata/platform-browser-dynamic';
 import { enableProdMode } from 'ng-metadata/core';
 
-import { AppModule } from './app';
+import { AppComponent } from './app';
 
 if ( ENV === 'production' ) {
   enableProdMode();
 }
 
-bootstrap( AppModule );
+bootstrap( AppComponent, [] );
