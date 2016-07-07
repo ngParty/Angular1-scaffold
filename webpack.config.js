@@ -214,7 +214,7 @@ const webpackConfigPlugins = [
    */
   new HtmlWebpackPlugin( {
     template: path.resolve( ROOT, 'index.html' ),
-    chunksSortMode: () => [ 'polyfills', 'vendor', 'main' ]
+    chunks: [ 'polyfills', 'vendor', 'main' ]
   } )
 
 ];
