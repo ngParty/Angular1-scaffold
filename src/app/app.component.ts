@@ -1,4 +1,7 @@
 import { Component, OnInit, Inject } from 'ng-metadata/core';
+import { SharedProviders } from './shared/index';
+import { HeroesComponent } from './heroes/heroes.component';
+import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
 
 @Component({
   selector: 'my-app',
@@ -11,6 +14,8 @@ import { Component, OnInit, Inject } from 'ng-metadata/core';
     </nav>
     <ng-outlet></ng-outlet>
   `,
+  directives: [ HeroesComponent, CrisisCenterComponent ],
+  providers: [ SharedProviders ],
   legacy: {
     $routeConfig: [
       { path: '/crisis-center/...', name: 'CrisisCenter', component: 'crisisCenter', useAsDefault: true },

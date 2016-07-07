@@ -1,9 +1,13 @@
 import { Component } from 'ng-metadata/core';
+
 import { CrisisService } from './crisis.service';
+import { CrisisDetailComponent } from './crisis-detail.component';
+import { CrisisListComponent } from './crisis-list.component';
 
 @Component( {
   selector: 'crisis-center',
-  providers: [ CrisisService ],
+  viewProviders: [ CrisisService ],
+  directives: [ CrisisListComponent, CrisisDetailComponent ],
   template: `<h2>Crisis Center</h2><ng-outlet></ng-outlet>`,
   legacy: {
     $routeConfig: [
