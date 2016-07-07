@@ -3,10 +3,14 @@
   "dependencies": {},
   "devDependencies": {},
   "globalDependencies": {
-    "angular": "registry:dt/angular#1.5.0+20160412133217",
-    "angular-mocks": "registry:dt/angular-mocks#1.3.0+20160412134242",
-    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
-    "jquery": "registry:dt/jquery#2.0.0+20160303223636",
-    "node": "registry:dt/node#4.0.0+20160412142033"
+    "angular": "registry:dt/angular#1.5.0+20160627105203",
+    "angular-mocks": "registry:dt/angular-mocks#1.5.0+20160608104721",
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+    "jquery": "registry:dt/jquery#1.10.0+20160704162008",
+    "node": "registry:dt/node#6.0.0+20160621231320"
+  },
+  "globalDevDependencies": {
+    "lodash": "registry:dt/lodash#3.10.0+20160619033623"
   }
 }

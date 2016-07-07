@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from 'ng-metadata/core';
 
 @Component({
-  selector: 'app',
+  selector: 'my-app',
   styles: [ require( './app.scss' ) ],
   template: `
     <h1>Hello from Pluto!!!</h1>
