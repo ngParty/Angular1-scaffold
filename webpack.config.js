@@ -62,8 +62,8 @@ const webpackConfigEntryPoints = {
  * See: http://webpack.github.io/docs/configuration.html#devtool
  * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
  */
-const webpackDevtool = 'source-map';
-// const webpackDevtool =  'cheap-module-eval-source-map';
+// const webpackDevtool = 'source-map';
+const webpackDevtool =  'cheap-module-source-map';
 
 const webpackPreLoaders = [
 
@@ -214,7 +214,7 @@ const webpackConfigPlugins = [
    */
   new HtmlWebpackPlugin( {
     template: path.resolve( ROOT, 'index.html' ),
-    chunksSortMode: () => [ 'polyfills', 'vendor', 'main' ]
+    chunksSortMode: 'dependency'
   } )
 
 ];
