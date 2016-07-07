@@ -1,9 +1,11 @@
+// NOTE: we cannot use ES6 modules and type annotations yet, because we cannot configure ts-node that runs within karma
+
 /**
  * @author: @ngParty
  */
 const testWebpackConfig = require('./webpack-test.config');
 
-module.exports = function(config) {
+module.exports = ( config ) => {
 
   config.set({
 
@@ -85,6 +87,6 @@ module.exports = function(config) {
      * if true, Karma captures browsers, runs the tests and exits
      */
     singleRun: true
-  });
+  } );
 
 };
