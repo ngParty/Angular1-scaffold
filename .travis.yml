@@ -1,16 +1,15 @@
 language: node_js
-
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
-
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
 node_js:
-  - '4.4.7'
-  - '6.3.0'
-
+- 4.4.7
+- 6.3.0
 install:
-  - npm install
-
+- npm install
 script:
-  - npm run test:ci
+- npm run test:ci
+notifications:
+  slack:
+    secure: lQ1bu6FYIRGshHffZKDDDMiDalCo1jm944XT5CIJQhzO7ARXeE1y8MPs4cwSxv+rg3KtGA/0JPkr3t1gGdueANP2XlI6vZDABZk7poxZNDpR/L6mUB1jZt3wriB2u5Br9CLI/lqwv4haO0c37aL7ZTZTroblLNkL5qq74yYEHYKvr4OIg+t9UCpieGuKmjXw4l9pQRaMl+SC9MtDepWbGqj+6dGuYksXVp8EmwE/t6zQGu91dMuyWWf2YDW0qj9SPveU3PBKTfp8KwlFmDTIHXmW+RJSUMM7t5WEQTqMrzWm+Tm33Pyowftmb6nhCgdcM5iAXQJsrx4vGaviaCsnauLK0U+iTWwGQo5PLpFleldmWFXMQvR2mku8GPY8OHa/G8vxcjyz3AhiRuSQy3vIrTwkG553JWZ6prvzc9EIlygfjJj0qeb9hwRoNOmhzywypZgnqMZZQjwUK0IXYGGBXTy4EUXJTX0Y0FEOAa+UXROACkiRfOVbZBD6xQ/6dmdBnJSY8mQInM2dgmo32bOCbo7mCBcZraxsSHMM2TP5TGShVc9Ki8CJp2fj2zygzttn1IbWttIUo9pmQnzEaU4QYERR5RrL0FlYr31Tib2tqA9Agp+PkYJGx260qFskb2lqLUubEYlZ33ckzhExjdyqCoFGqeg27QxAar7EoFLzh6k=
