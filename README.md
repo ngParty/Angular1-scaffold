@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ngParty/Angular1-scaffold.svg?branch=master)](https://travis-ci.org/ngParty/Angular1-scaffold)
 [![GitHub version](https://badge.fury.io/gh/ngParty%2FAngular1-scaffold.svg)](https://badge.fury.io/gh/ngParty%2FAngular1-scaffold) 
 [![Dependency Status](https://david-dm.org/ngParty/Angular1-scaffold.svg)](https://david-dm.org/ngParty/Angular1-scaffold)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ngParty/Angular1-scaffold/master/LICENSE)
