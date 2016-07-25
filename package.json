@@ -59,7 +59,7 @@
     "phantomjs-prebuilt": "2.1.7",
     "raw-loader": "0.5.1",
     "remap-istanbul": "0.6.4",
-    "rimraf": "2.5.3",
+    "rimraf": "2.5.4",
     "sass-loader": "3.2.2",
     "source-map-loader": "0.1.5",
     "style-loader": "0.13.1",
