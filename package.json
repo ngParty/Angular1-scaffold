@@ -75,7 +75,7 @@
     "webpack-dev-server": "1.16.2"
   },
   "engines": {
-    "node": ">= 4.2.1",
+    "node": ">= 6.x",
     "npm": ">= 3"
   }
 }
