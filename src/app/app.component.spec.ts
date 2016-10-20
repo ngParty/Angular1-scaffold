@@ -1,6 +1,7 @@
+import * as angular from 'angular';
 import { kebabCase } from 'lodash';
 import { IRender, renderFactory } from 'ng-metadata/testing';
-import { Component, getInjectableName, bundle } from 'ng-metadata/core';
+import { NgModule, Component, getInjectableName, bundle } from 'ng-metadata/core';
 
 import { AppComponent } from './app.component';
 
@@ -8,16 +9,23 @@ describe( `AppComponent`, () => {
 
   @Component( {
     selector: 'test-component',
-    directives: [ AppComponent ],
     template: `<my-app></my-app>`
   } )
   class TestComponent {
   }
 
-  const TestModule: string = bundle( TestComponent ).name;
+  @NgModule( {
+    declarations: [ AppComponent, TestComponent ]
+  } )
+  class TestModule {
+  }
+
+  const TestModuleName = bundle( TestModule ).name;
+
+
   let render: IRender<TestComponent>;
 
-  beforeEach( angular.mock.module( TestModule ) );
+  beforeEach( angular.mock.module( TestModuleName ) );
 
   beforeEach( angular.mock.inject( ( $injector: ng.auto.IInjectorService ) => {
 
