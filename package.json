@@ -46,7 +46,7 @@
     "codelyzer": "0.0.26",
     "copy-webpack-plugin": "3.0.1",
     "css-loader": "0.23.1",
-    "html-webpack-plugin": "2.22.0",
+    "html-webpack-plugin": "2.23.0",
     "istanbul-instrumenter-loader": "0.2.0",
     "jasmine-core": "2.5.2",
     "json-loader": "0.5.4",
