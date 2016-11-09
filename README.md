@@ -7,7 +7,7 @@
 
 ![ngparty-scaffold-logo](https://cloud.githubusercontent.com/assets/1223799/15454478/db5b45f6-2039-11e6-8a24-315656d53b6d.png)
 
-> The de facto starter repo for building scalable and Angular 2 migration ready apps with Angular, Typescript, ng-metadata and Webpack
+> The de facto starter repo for building scalable and Angular 2 migration ready apps with Angular, Typescript 2.x, ng-metadata and Webpack 1.x
 
 This seed repo serves as a minimal starter for anyone looking to get up and running with Angular 1 and Typescript fast.
 It uses Webpack for the build process, which is highly maintainable, fast and modular build system.
