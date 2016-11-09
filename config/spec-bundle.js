@@ -42,6 +42,13 @@ var modules = requireAll(testContext);
  * that will require the file and load it up here. Context will
  * loop and require those spec files here
  */
-function requireAll(requireContext) {
-  return requireContext.keys().map(requireContext);
+function requireAll( requireContext ) {
+  return requireContext.keys().map( ( path ) => {
+    try {
+      return requireContext( path );
+    } catch ( err ) {
+      console.error( '[ERROR] WITH SPEC FILE: ', path );
+      console.error( err );
+    }
+  } );
 }
