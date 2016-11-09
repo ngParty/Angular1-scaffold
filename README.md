@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/ngParty/Angular1-scaffold.svg?branch=master)](https://travis-ci.org/ngParty/Angular1-scaffold)
-[![GitHub version](https://badge.fury.io/gh/ngParty%2FAngular1-scaffold.svg)](https://badge.fury.io/gh/ngParty%2FAngular1-scaffold) 
+[![GitHub version](https://badge.fury.io/gh/ngParty%2FAngular1-scaffold.svg)](https://badge.fury.io/gh/ngParty%2FAngular1-scaffold)
 [![Dependency Status](https://david-dm.org/ngParty/Angular1-scaffold.svg)](https://david-dm.org/ngParty/Angular1-scaffold)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ngParty/Angular1-scaffold/master/LICENSE)
 
@@ -18,13 +18,13 @@ It uses Webpack for the build process, which is highly maintainable, fast and mo
 - [x] Ready to go build system using [Webpack](https://webpack.github.io/) for working with TypeScript
 - [x] great Angular 1 seed repo for anyone who wants to start their project and be ready for migration to Angular 2.
 - [x] Angular code powered by [ng-metadata](https://github.com/ngParty/ng-metadata) which allows you to write angular 2 ready code with angular 1
-- [x] includes TSlint and [Codelyzer](https://github.com/mgechev/codelyzer) so it will tell you if your code is not following Angular 2 styleguide 
+- [x] includes TSlint and [Codelyzer](https://github.com/mgechev/codelyzer) so it will tell you if your code is not following Angular 2 styleguide
 - [x] testing Angular code with Jasmine and Karma.
 - [x] coverage with Istanbul and Karma
-- [x] type manager with Typings
+- [x] type manager with npm ( via [@types](https://www.npmjs.com/~types )
 - [x] Sass support ( you can add your own preprocessor pretty easily )
 - [x] source maps support
-- [x] [Component Router](https://github.com/ngParty/Angular1-scaffold/tree/component-router) ( for this we have separate branch, because we don't want to force you to use it ;) )
+- [x] ~~[Component Router](https://github.com/ngParty/Angular1-scaffold/tree/component-router)~~ ( for this we have separate branch, because we don't want to force you to use it ;) ) *NOTE* this is deprecated since angular team dropped router support to ng1
 - [ ] ngUpgrade + Angular 2 integration within build
 
 
@@ -67,15 +67,15 @@ npm run test:watch
 npm run build
 ```
 
-check your production ready application within `/dist` 
+check your production ready application within `/dist`
 
-**NOTE:** 
+**NOTE:**
 If you need to include any assets like images, custom fonts etc. place them withing `src/assets`
 
 This folder will be copied and flattened to your `/dist`. so as an example:
-`/src/assets/images/hello.jps` -> `/dist/images/hello.png`
+`/src/assets/images/hello.png` -> `/dist/images/hello.png`
 
-For these reasons use `images/pluto-the-planet.jpg` path when directly referencing assets withing your html 
+For these reasons use `images/pluto-the-planet.jpg` path when directly referencing assets withing your html
 
 
 ### Adding 3rd party libraries
@@ -84,20 +84,18 @@ For these reasons use `images/pluto-the-planet.jpg` path when directly referenci
 npm install --save <your-library-name>
 ```
 
-If it doesn't ship with type definitions, you need to download them via [typings](#customtypedefinitions) 
+If it doesn't ship with type definitions, you need to download them via [npm @types](#customtypedefinitions)
 
 now just `import` what you need via `es2015` module syntax
 
 ### Custom Type Definitions
 
-When including 3rd party modules you also need to include the type definition for the module if they don't provide one within the module. 
-You can install it with typings:
+When including 3rd party modules you also need to include the type definition for the module if they don't provide one within the module.
+You can install it with npm:
 
 ```bash
-npm run typings -- install moment --save --global
+npm install --save @types/moment
 ```
-
-For more info about typing, check out the [typings docs](https://github.com/typings/typings) 
 
 If there isn't a type definition for your 3rd party library, which is very unlikely, you can place your own custom global type definitions within `src/globals.d.ts`
 
@@ -121,7 +119,7 @@ If you're importing a module that uses Node.js modules which are CommonJS you ne
 import * as _ from 'lodash';
 ```
 
-You can include your type definitions in this file until you create one for the typings registry see [typings/registry](https://github.com/typings/registry)
+You can include your type definitions in this file until you create one for the @types npm registry
 
 ### Proposed File structure
 
@@ -131,10 +129,12 @@ src/
  │   │--shared/            * Do put all shared files within a component feature in a shared folder.
  |   |   |-- exception.service.ts
  |   |   |-- exception.service.spec.ts
+ |   |   |-- shared.module.ts * shared module with all shared declarations and providers
  |   |   |-- index.ts             * barrel file
+ │   |--app.module.ts      * angular module
  │   |--app.component.ts   * root component
  │   │──app.spec.ts        * a simple test of components in app.ts
- │   │──index.ts           * barrel file 
+ │   │──index.ts           * barrel file
  │   │
  │──assets/                * static assets are served here
  │   ├──icon/              * our list of icons from www.favicon-generator.org
@@ -143,11 +143,11 @@ src/
  │   ├──robots.txt         * for search engines to crawl your website
  │   └──human.txt          * for humans to know who the developers are
  |──main.ts        * our entry file for our browser environment
- │   
+ │
  |──index.html     * Index.html: where we generate our index page
- │   
+ │
  |──polyfills.ts   * our polyfills file
- │   
+ │
  |──vendor.ts      * our vendor file
  |
  |──globals.d.ts   * our custom global type definitions
@@ -161,7 +161,7 @@ Be efficient, we have [code snippets](https://github.com/ngParty/jetbrains-angul
 
 ### Data flow and state management
 
-We highly recommend to go fully reactive by embracing [Redux](https://github.com/angular-redux/ng-redux) or [RxJs](http://reactivex.io/rxjs/) or both! 
+We highly recommend to go fully reactive by embracing [Redux](https://github.com/angular-redux/ng-redux) or [RxJs](http://reactivex.io/rxjs/) or both!
 From architectural point Smart and Dumb components, is the way to go!
 
 Have fun!
