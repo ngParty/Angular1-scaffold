@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@types/angular-mocks": "1.5.5",
-    "@types/lodash": "4.14.37",
     "@types/jasmine": "2.5.35",
+    "@types/lodash": "4.14.37",
     "@types/node": "6.0.45",
     "angular-mocks": "1.5.8",
     "awesome-typescript-loader": "2.2.4",
