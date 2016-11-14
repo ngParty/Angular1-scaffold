@@ -44,7 +44,7 @@
     "angular-mocks": "1.5.8",
     "awesome-typescript-loader": "2.2.4",
     "codelyzer": "0.0.28",
-    "copy-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.25.0",
     "html-webpack-plugin": "2.24.1",
     "istanbul-instrumenter-loader": "1.0.0",
