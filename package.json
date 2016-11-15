@@ -70,7 +70,7 @@
     "style-loader": "0.13.1",
     "tslint": "3.15.1",
     "tslint-loader": "2.1.5",
-    "typescript": "2.0.9",
+    "typescript": "2.0.10",
     "webpack": "1.13.3",
     "webpack-dev-server": "1.16.2"
   },
