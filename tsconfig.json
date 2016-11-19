@@ -10,8 +10,16 @@
     "pretty": true,
     "stripInternal": true,
     "noEmitHelpers": true,
-    "outDir": "ts-out"
+    "outDir": "ts-out",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
+  // "include":[
+  //   "src/**/*.ts"
+  // ],
+  // "files": [
+  //   "node_modules/ng-metadata/manual_typings/angular-extension.d.ts"
+  // ],
   "exclude": [
     "node_modules"
   ],

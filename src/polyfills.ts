@@ -18,6 +18,13 @@ import 'core-js/es6/typed';
 import 'core-js/es6/reflect';
 
 import 'reflect-metadata';
+import 'zone.js/dist/zone';
 
 // Typescript emit helpers polyfill
 import 'ts-helpers';
+
+if ( ENV === 'development' ) {
+  Error.stackTraceLimit = Infinity;
+
+  require( 'zone.js/dist/long-stack-trace-zone' );
+}
