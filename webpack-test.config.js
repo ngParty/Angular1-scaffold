@@ -41,12 +41,14 @@ const webpackNode = {
   process: false
 };
 
+const definePlugin = webpackConfig.plugins[0];
+
 Object.assign( webpackConfig, {
   entry: {},
   output: {},
   devtool: webpackDevtool,
   watch: false,
-  plugins: [],
+  plugins: [definePlugin],
   node: Object.assign( webpackConfig.node, webpackNode )
 } );
 Object.assign( webpackConfig.module, {
