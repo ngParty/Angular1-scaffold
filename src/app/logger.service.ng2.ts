@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { OpaqueToken } from 'ng-metadata/core';
+import { OpaqueToken, Injectable as NgMetadataInjectable } from 'ng-metadata/core';
 
+// this is not needed because we are decorating the service with ngMetadata @Injectable
 export const LoggerToken = new OpaqueToken('ng2.Logger');
 
-Injectable()
+@NgMetadataInjectable()
+@Injectable()
 export class Logger {
   log(...args: any[]) {
     // tslint:disable
