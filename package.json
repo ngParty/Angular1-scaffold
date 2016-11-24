@@ -29,7 +29,7 @@
   "dependencies": {
     "@types/angular": "1.5.16",
     "@types/core-js": "0.9.34",
-    "angular": "1.5.8",
+    "angular": "1.5.9",
     "core-js": "2.4.1",
     "ng-metadata": "3.0.3",
     "reflect-metadata": "0.1.8",
