@@ -1,11 +1,11 @@
 import { Component, OnInit, Inject } from 'ng-metadata/core';
 
+import * as appTemplate from './app.html';
+
 @Component({
   selector: 'my-app',
   styles: [ require( './app.scss' ) ],
-  template: `
-    <h1>Hello from Pluto!!!</h1>
-  `
+  template: appTemplate
 })
 export class AppComponent implements OnInit {
 

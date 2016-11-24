@@ -6,3 +6,7 @@ declare var ENV: string;
 interface GlobalEnvironment {
   ENV: typeof ENV
 }
+
+// wildcard module declarations see https://www.typescriptlang.org/docs/handbook/modules.html#wildcard-module-declarations
+// to enable template import
+declare module '*.html';
