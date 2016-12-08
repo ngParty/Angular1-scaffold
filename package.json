@@ -41,7 +41,7 @@
     "@types/jasmine": "2.5.35",
     "@types/lodash": "4.14.37",
     "@types/node": "6.0.45",
-    "angular-mocks": "1.5.8",
+    "angular-mocks": "1.6.0",
     "awesome-typescript-loader": "2.2.4",
     "codelyzer": "0.0.28",
     "copy-webpack-plugin": "4.0.1",
