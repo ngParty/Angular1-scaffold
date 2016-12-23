@@ -47,7 +47,7 @@
     "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.26.0",
     "html-webpack-plugin": "2.24.1",
-    "istanbul-instrumenter-loader": "1.0.0",
+    "istanbul-instrumenter-loader": "1.2.0",
     "jasmine-core": "2.5.2",
     "json-loader": "0.5.4",
     "karma": "1.3.0",
