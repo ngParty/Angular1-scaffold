@@ -69,7 +69,7 @@
     "source-map-loader": "0.1.5",
     "style-loader": "0.13.1",
     "tslint": "4.2.0",
-    "tslint-loader": "2.1.5",
+    "tslint-loader": "3.2.1",
     "typescript": "2.1.4",
     "webpack": "1.13.3",
     "webpack-dev-server": "1.16.2"
