@@ -6,3 +6,6 @@ declare const ENV: string;
 interface GlobalEnvironment {
   ENV: typeof ENV
 }
+
+declare module '*.scss'
+declare module '*.html'

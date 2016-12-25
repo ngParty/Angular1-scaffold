@@ -1,0 +1,22 @@
+body {
+  background-color: #333 ;
+  color: navajowhite;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  font-size: 1.5rem;
+  a {
+    color: floralwhite;
+    &.active{
+      color: tomato;
+    }
+  }
+}
+
+main{
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: brown;
+}
