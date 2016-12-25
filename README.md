@@ -27,6 +27,10 @@ It uses Webpack for the build process, which is highly maintainable, fast and mo
 - [x] ~~[Component Router](https://github.com/ngParty/Angular1-scaffold/tree/component-router)~~ ( for this we have separate branch, because we don't want to force you to use it ;) ) *NOTE* this is deprecated since angular team dropped router support to ng1
 - [ ] ngUpgrade + Angular 2 integration within build
 
+### Static analysis via Typescript and Codelyzer ( exactly like with Angular 2 ):
+
+![ng-metadata-with-codelyzer-on-steroids](https://cloud.githubusercontent.com/assets/1223799/21472541/fd7f804c-cadf-11e6-94ae-62c4682c76f8.gif)
+
 
 ## Install
 
