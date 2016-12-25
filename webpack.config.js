@@ -63,7 +63,7 @@ const webpackConfigEntryPoints = {
  * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
  */
 // const webpackDevtool = 'source-map';
-const webpackDevtool =  'cheap-module-source-map';
+const webpackDevtool =  '#cheap-module-source-map';
 
 const webpackPreLoaders = [
 

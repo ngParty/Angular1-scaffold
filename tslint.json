@@ -4,10 +4,8 @@
   ],
   "rules": {
 
-    "directive-selector-name": [true, "camelCase"],
-    "component-selector-name": [true, "kebab-case"],
-    "directive-selector-type": [true, "attribute"],
-    "component-selector-type": [true, "element"],
+    "directive-selector": [true, "attribute", "np", "camelCase"],
+    "component-selector": [true, "element", "np", "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
@@ -15,8 +13,12 @@
     "no-output-rename": true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
+    "pipe-naming": [true, "camelCase", "np"],
     "component-class-suffix": true,
     "directive-class-suffix": true,
+    "templates-use-public": true,
+    "no-access-missing-member": true,
+    "invoke-injectable": true,
 
     "class-name": true,
     "radix": true,
@@ -37,10 +39,8 @@
       "log",
       "error"
     ],
-    "no-unreachable": true,
     "no-use-before-declare": true,
     "no-unused-expression": true,
-    "no-duplicate-key": true,
     "no-debugger": true,
     "no-conditional-assignment": true,
     "no-duplicate-variable": true,

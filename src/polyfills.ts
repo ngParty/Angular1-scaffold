@@ -19,5 +19,4 @@ import 'core-js/es6/reflect';
 
 import 'reflect-metadata';
 
-// Typescript emit helpers polyfill
-import 'ts-helpers';
+import 'tslib';

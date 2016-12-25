@@ -1,14 +1,15 @@
 import { Component, OnInit, Inject } from 'ng-metadata/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'np-app',
   styles: [ require( './app.scss' ) ],
   template: `
-    <h1>Hello from Pluto!!!</h1>
+    <h1>Hello from {{ $ctrl.planet }} !</h1>
   `
 })
 export class AppComponent implements OnInit {
 
+  planet = 'Pluto';
   constructor( @Inject( '$log' ) private _$log: ng.ILogService ) {}
 
   ngOnInit() {

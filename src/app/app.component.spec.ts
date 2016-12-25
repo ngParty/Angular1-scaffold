@@ -1,15 +1,15 @@
 import * as angular from 'angular';
-import { kebabCase } from 'lodash';
 import { IRender, renderFactory } from 'ng-metadata/testing';
-import { NgModule, Component, getInjectableName, bundle } from 'ng-metadata/core';
+import { NgModule, Component } from 'ng-metadata/core';
 
+import { queryByDirective, createAngular1Module } from './shared/test-helpers';
 import { AppComponent } from './app.component';
 
 describe( `AppComponent`, () => {
 
   @Component( {
-    selector: 'test-component',
-    template: `<my-app></my-app>`
+    selector: 'np-test-component',
+    template: `<np-app></np-app>`
   } )
   class TestComponent {
   }
@@ -20,7 +20,7 @@ describe( `AppComponent`, () => {
   class TestModule {
   }
 
-  const TestModuleName = bundle( TestModule ).name;
+  const TestModuleName = createAngular1Module( TestModule );
 
 
   let render: IRender<TestComponent>;
@@ -45,22 +45,9 @@ describe( `AppComponent`, () => {
     const { debugElement, componentInstance } = queryByDirective( compiledElement, AppComponent );
 
     expect( componentInstance instanceof AppComponent ).toBe( true );
-    expect( debugElement.text() ).toContain( 'Hello from Pluto!!!' );
+    expect( debugElement.text() ).toContain( 'Hello from Pluto !' );
 
   } );
 
 
 } );
-
-/**
- * helper for getting tested components
- * - this is just temporary and will be removed when it's part if ngMetadata
- */
-export function queryByDirective<T extends Function>( host: ng.IAugmentedJQuery, Type: T ) {
-  const ctrlName = getInjectableName( Type );
-  const selector = kebabCase( ctrlName );
-  const debugElement = host.find( selector );
-  const componentInstance = debugElement.controller( ctrlName ) as T;
-
-  return { debugElement, componentInstance };
-}

@@ -2,10 +2,7 @@
   "name": "angular1-scaffold",
   "version": "1.0.0",
   "description": "Angular 1 scaffold with Typescript and ng-metadata",
-  "main": "app/app.js",
-  "config": {
-    "port": "9000"
-  },
+  "main": "src/app/main.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ngParty/Angular1-scaffold.git"
@@ -18,7 +15,7 @@
     "test:ci": "karma start --browsers Firefox",
     "test:watch": "npm run test -- --auto-watch --no-single-run",
     "clean": "rimraf doc/ coverage/ dist/",
-    "server": "webpack-dev-server --port $npm_package_config_port --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/"
+    "server": "webpack-dev-server --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/"
   },
   "keywords": [],
   "contributors": [
@@ -27,23 +24,25 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "@types/angular": "1.5.16",
-    "@types/core-js": "0.9.34",
+    "@types/angular": "1.5.22",
+    "@types/core-js": "0.9.35",
     "angular": "1.6.1",
     "core-js": "2.4.1",
     "ng-metadata": "4.0.0",
     "reflect-metadata": "0.1.9",
     "rxjs": "5.0.2",
-    "ts-helpers": "1.1.2"
+    "tslib": "1.4.0"
   },
   "devDependencies": {
-    "@types/angular-mocks": "1.5.5",
-    "@types/jasmine": "2.5.35",
+    "@angular/compiler": "2.4.1",
+    "@angular/core": "2.4.1",
+    "@types/angular-mocks": "1.5.8",
+    "@types/jasmine": "2.5.38",
     "@types/lodash": "4.14.37",
-    "@types/node": "6.0.45",
+    "@types/node": "6.0.53",
     "angular-mocks": "1.6.1",
-    "awesome-typescript-loader": "2.2.4",
-    "codelyzer": "0.0.28",
+    "awesome-typescript-loader": "3.0.0-beta.17",
+    "codelyzer": "2.0.0-beta.4",
     "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.26.1",
     "html-webpack-plugin": "2.24.1",
@@ -61,7 +60,6 @@
     "karma-webpack": "1.8.1",
     "lodash": "4.17.3",
     "node-sass": "4.1.1",
-    "phantomjs-prebuilt": "2.1.14",
     "raw-loader": "0.5.1",
     "remap-istanbul": "0.8.4",
     "rimraf": "2.5.4",
@@ -72,7 +70,8 @@
     "tslint-loader": "3.3.0",
     "typescript": "2.1.4",
     "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2"
+    "webpack-dev-server": "1.16.2",
+    "zone.js": "0.7.4"
   },
   "engines": {
     "node": ">= 6.x",
