@@ -24,6 +24,7 @@ It uses Webpack for the build process, which is highly maintainable, fast and mo
 - [x] type manager with npm ( via [@types](https://www.npmjs.com/~types )
 - [x] Sass support ( you can add your own preprocessor pretty easily )
 - [x] source maps support
+- [x] [UI-Router](https://github.com/ngParty/Angular1-scaffold/tree/ui-router) ( for this we have separate branch, because we don't want to force you to use it ;) )
 - [x] ~~[Component Router](https://github.com/ngParty/Angular1-scaffold/tree/component-router)~~ ( for this we have separate branch, because we don't want to force you to use it ;) ) *NOTE* this is deprecated since angular team dropped router support to ng1
 - [ ] ngUpgrade + Angular 2 integration within build
 
