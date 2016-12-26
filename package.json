@@ -2,7 +2,7 @@
   "name": "angular1-scaffold",
   "version": "1.0.0",
   "description": "Angular 1 scaffold with Typescript and ng-metadata",
-  "main": "src/app/main.ts",
+  "main": "src/main.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ngParty/Angular1-scaffold.git"
