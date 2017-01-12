@@ -59,7 +59,7 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "1.8.1",
     "lodash": "4.17.3",
-    "node-sass": "4.1.1",
+    "node-sass": "4.3.0",
     "raw-loader": "0.5.1",
     "remap-istanbul": "0.8.4",
     "rimraf": "2.5.4",
