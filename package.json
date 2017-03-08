@@ -44,7 +44,7 @@
     "awesome-typescript-loader": "3.0.0-beta.17",
     "codelyzer": "2.0.0-beta.4",
     "copy-webpack-plugin": "4.0.1",
-    "css-loader": "0.26.1",
+    "css-loader": "0.26.4",
     "html-webpack-plugin": "2.24.1",
     "istanbul-instrumenter-loader": "1.2.0",
     "jasmine-core": "2.5.2",
