@@ -42,7 +42,7 @@
     "@types/node": "6.0.53",
     "angular-mocks": "1.6.1",
     "awesome-typescript-loader": "3.0.0-beta.17",
-    "codelyzer": "2.0.0-beta.4",
+    "codelyzer": "3.0.1",
     "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.26.1",
     "html-webpack-plugin": "2.24.1",
