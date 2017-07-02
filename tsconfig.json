@@ -1,19 +1,28 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "target": "es5",
-    "noImplicitAny": false,
-    "sourceMap": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "module": "commonjs",
     "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "es6", "es2015", "es2016", "es2017"],
+    "skipDefaultLibCheck": true,
     "pretty": true,
-    "stripInternal": true,
-    "noEmitHelpers": true,
-    "outDir": "ts-out"
+    "sourceMap": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "allowJs":true,
+    "allowUnreachableCode": true
   },
   "exclude": [
     "node_modules"
   ],
-  "compileOnSave": false
+  "awesomeTypescriptLoaderOptions": {
+    "useWebpackText": true,
+    "forkChecker": true,
+    "useCache": true
+  },
+  "compileOnSave": false,
+  "buildOnSave": false
 }
