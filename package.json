@@ -56,6 +56,7 @@
     "karma-firefox-launcher": "1.0.1",
     "karma-jasmine": "1.1.0",
     "karma-mocha-reporter": "2.2.3",
+    "karma-phantomjs-launcher": "^1.0.4",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.3",
     "lodash": "4.17.4",
