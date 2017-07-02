@@ -31,7 +31,10 @@ const METADATA = {
     // "config": {
     //    "port": "9000"
     // }
-    port : process.env.npm_package_config_port || 9000
+    port : process.env.npm_package_config_port || 9000,
+    googleAnalytics: {
+    trackingId: 'UA-XXXX-XX'
+  }
 };
 
 const webpackConfigEntryPoints = {
