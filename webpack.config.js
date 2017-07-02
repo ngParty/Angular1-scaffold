@@ -23,7 +23,7 @@ const DESTINATION = path.resolve(__dirname, 'dist');
 const METADATA = {
     baseUrl : '/',
     lang : 'en',
-    title : 'Sslesroom',
+    title : 'Tombaugh Regio',
     ENV : JSON.stringify(ENV),
     host : '0.0.0.0',
     // port is determined from npm config
@@ -33,8 +33,8 @@ const METADATA = {
     // }
     port : process.env.npm_package_config_port || 9000,
     googleAnalytics: {
-    trackingId: 'UA-XXXX-XX'
-  }
+        trackingId: 'UA-XXXX-XX'
+    }
 };
 
 const webpackConfigEntryPoints = {
